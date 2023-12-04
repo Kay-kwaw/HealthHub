@@ -14,6 +14,7 @@
 		CE72FD332B1DE46D003C2B9A /* MedifactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72FD322B1DE46D003C2B9A /* MedifactsTests.swift */; };
 		CE72FD3D2B1DE46D003C2B9A /* MedifactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72FD3C2B1DE46D003C2B9A /* MedifactsUITests.swift */; };
 		CE72FD3F2B1DE46D003C2B9A /* MedifactsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72FD3E2B1DE46D003C2B9A /* MedifactsUITestsLaunchTests.swift */; };
+		CE7481312B1DF1260018AC34 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7481302B1DF1260018AC34 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		CE72FD382B1DE46D003C2B9A /* MedifactsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedifactsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE72FD3C2B1DE46D003C2B9A /* MedifactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedifactsUITests.swift; sourceTree = "<group>"; };
 		CE72FD3E2B1DE46D003C2B9A /* MedifactsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedifactsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CE7481302B1DF1260018AC34 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,8 @@
 			children = (
 				CE72FD212B1DE46C003C2B9A /* MedifactsApp.swift */,
 				CE72FD232B1DE46C003C2B9A /* ContentView.swift */,
+				CE72FD4D2B1DE4B3003C2B9A /* Views */,
+				CE72FD4B2B1DE493003C2B9A /* Models */,
 				CE72FD252B1DE46D003C2B9A /* Assets.xcassets */,
 				CE72FD272B1DE46D003C2B9A /* Preview Content */,
 			);
@@ -125,6 +129,21 @@
 				CE72FD3E2B1DE46D003C2B9A /* MedifactsUITestsLaunchTests.swift */,
 			);
 			path = MedifactsUITests;
+			sourceTree = "<group>";
+		};
+		CE72FD4B2B1DE493003C2B9A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE72FD4D2B1DE4B3003C2B9A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE7481302B1DF1260018AC34 /* HomeView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7481312B1DF1260018AC34 /* HomeView.swift in Sources */,
 				CE72FD242B1DE46C003C2B9A /* ContentView.swift in Sources */,
 				CE72FD222B1DE46C003C2B9A /* MedifactsApp.swift in Sources */,
 			);
