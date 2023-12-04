@@ -11,11 +11,14 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             VStack {
+                Text("Health Hub")
+                    .font(.title)
+                    .padding(10)
                 Image("medicine image")
                     .imageScale(.large)
                     .foregroundStyle(.tint)
-                Text("Health Hub")
-                    .font(.headline)
+                    .padding()
+                Text("Empowering users with valuable knowledge for informed decisions \nabout their well-being.")
                     .padding(30)
                 NavigationLink(
                     destination: HomeView(), label: {
