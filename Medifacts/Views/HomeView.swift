@@ -71,16 +71,18 @@ struct HomeView: View {
   @StateObject private var healthFetcher = HealthFetcher()
 
   var body: some View {
-    VStack {
-      Text(healthFetcher.joke)
-        .padding()
-      Button("Fetch Health Tip") {
-          healthFetcher .fetchTip()
+      ZStack {
+          VStack {
+          Text(healthFetcher.joke)
+            .padding()
+          Button("Fetch Health Tip") {
+              healthFetcher .fetchTip()
+          }
+        }
+        .onAppear {
+            healthFetcher.fetchTip()
+    }
       }
-    }
-    .onAppear {
-        healthFetcher.fetchTip()
-    }
   }
 }
 
@@ -95,7 +97,7 @@ class HealthFetcher: ObservableObject {
             "Adequate Sleep: Ensure you get 7-9 hours of quality sleep each night. Sleep is crucial for physical and mental recovery, immune function, and overall well-being.!",
             "Mind-Body Connection: Practice stress-reducing activities such as meditation, deep breathing, or yoga. Chronic stress can negatively impact both physical and mental health.",
             "Limit Sugar and Processed Foods: High sugar intake and processed foods can contribute to various health issues, including obesity, diabetes, and heart disease. Choose whole, unprocessed foods whenever possible."
-          ]
+    ]
 
   func fetchTip() {
     // Networking code here
