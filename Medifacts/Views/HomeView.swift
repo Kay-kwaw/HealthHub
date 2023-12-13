@@ -8,7 +8,6 @@ struct HomeView: View {
 
   var body: some View {
       NavigationView{
-          ZStack {
               VStack {
                   Text("")
                       .navigationBarItems(
@@ -21,17 +20,27 @@ struct HomeView: View {
                                          }
                                      )
                                      .navigationBarTitle("Dasboard", displayMode: .inline)
-              Text(healthFetcher.joke)
+                  Text("Discover Something New!")
+                      .font(.headline)
+                      .padding(5)
+                  Image("medicine image")
+                      .imageScale(.small)
+                      .foregroundStyle(.tint)
+                      .padding()
+                  
+                                Text(healthFetcher.joke)
                 .padding()
               Button("Fetch Health Tip") {
                   healthFetcher .fetchTip()
               }
+              .padding(90)
             }
             .onAppear {
                 healthFetcher.fetchTip()
         }
+          
           }
-      }
+      
   }
 }
 

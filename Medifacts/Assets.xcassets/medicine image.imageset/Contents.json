@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "undraw_medicine_b1ol.png",
+      "filename" : "readingone.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "undraw_medicine_b1ol 1.png",
+      "filename" : "readingthree.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "undraw_medicine_b1ol 2.png",
+      "filename" : "readingtwo.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
