@@ -14,7 +14,7 @@ struct ContentView: View {
                 Text("Health Hub")
                     .font(.title)
                     .padding(10)
-                Image("medicine image")
+                Image("homeimage")
                     .imageScale(.large)
                     .foregroundStyle(.tint)
                     .padding()
