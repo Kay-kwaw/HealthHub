@@ -16,6 +16,8 @@ struct HomeView: View {
       NavigationView{
               VStack {
                   Text("Discover Something New!")
+                      .navigationBarBackButtonHidden(true)
+    
                       .font(.headline)
                       .padding(5)
                       .navigationBarItems(
@@ -30,7 +32,7 @@ struct HomeView: View {
                                 Sidebar()}),
                           trailing:
                               // Icon on the top-right corner
-                              Image(systemName: "close")
+                              Image(systemName: "clear")
                       )
                                      .navigationBarTitle("Dasboard", displayMode: .inline)
                   
@@ -40,15 +42,14 @@ struct HomeView: View {
                       .padding()
                   
                                 Text(healthFetcher.joke)
-                      .foregroundColor(.white)
-                      .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-                      .background(Color.black)
-                      .cornerRadius(10)
+                    
+                      
 
                       
                 .padding()
               Button("Fetch Health Tip") {
                   healthFetcher .fetchTip()
+                      
                       
               }
               .padding(90)
