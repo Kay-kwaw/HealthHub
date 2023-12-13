@@ -2,30 +2,40 @@
 
 import SwiftUI
 import Combine
-
+struct Sidebar: View {
+    var body: some View {
+        Text("Sidebar content")
+    }
+}
 struct HomeView: View {
   @StateObject private var healthFetcher = HealthFetcher()
+  @State private var isSidebarVisible = false
 
   var body: some View {
       NavigationView{
               VStack {
-                  Text("")
-                      .navigationBarItems(
-                                         leading:
-                                             Image(systemName: "list.bullet")
-                                         ,
-                                         trailing: HStack {
-                                             // Icon on the top-right corner
-                                             Image(systemName: "your_icon_name")
-                                         }
-                                     )
-                                     .navigationBarTitle("Dasboard", displayMode: .inline)
                   Text("Discover Something New!")
                       .font(.headline)
                       .padding(5)
+                      .navigationBarItems(
+                          leading:
+                              Button(action: {
+                                  isSidebarVisible.toggle()
+                              }) {
+                                  Image(systemName: "list.bullet")
+                                  
+                              }
+                            .sheet(isPresented: $isSidebarVisible, content: {
+                                Sidebar()}),
+                          trailing:
+                              // Icon on the top-right corner
+                              Image(systemName: "close")
+                      )
+                                     .navigationBarTitle("Dasboard", displayMode: .inline)
+                  
                   Image("medicine image")
                       .imageScale(.small)
-                      .foregroundStyle(.tint)
+                     
                       .padding()
                   
                                 Text(healthFetcher.joke)
@@ -49,12 +59,12 @@ class HealthFetcher: ObservableObject {
   private var cancellable: AnyCancellable?
   private let tips = 
     [
-            "Stay Hydrated: Drink an adequate amount of water daily to maintain proper bodily functions. Water is essential for digestion, absorption of nutrients, and overall cellular health.!",
-            "Balanced Diet: Consume a variety of nutrient-rich foods, including fruits, vegetables, whole grains, lean proteins, and healthy fats. This provides your body with the necessary vitamins and minerals for optimal health.!",
-            "Regular Exercise: Engage in regular physical activity to promote cardiovascular health, maintain a healthy weight, and boost your mood. Aim for at least 150 minutes of moderate-intensity exercise per week.!",
-            "Adequate Sleep: Ensure you get 7-9 hours of quality sleep each night. Sleep is crucial for physical and mental recovery, immune function, and overall well-being.!",
-            "Mind-Body Connection: Practice stress-reducing activities such as meditation, deep breathing, or yoga. Chronic stress can negatively impact both physical and mental health.",
-            "Limit Sugar and Processed Foods: High sugar intake and processed foods can contribute to various health issues, including obesity, diabetes, and heart disease. Choose whole, unprocessed foods whenever possible."
+            "Stay Hydrated:\nDrink an adequate amount of water daily to maintain proper bodily functions. Water is essential for digestion, absorption of nutrients, and overall cellular health.!",
+            "Balanced Diet:\nConsume a variety of nutrient-rich foods, including fruits, vegetables, whole grains, lean proteins, and healthy fats. This provides your body with the necessary vitamins and minerals for optimal health.!",
+            "Regular Exercise:\nEngage in regular physical activity to promote cardiovascular health, maintain a healthy weight, and boost your mood. Aim for at least 150 minutes of moderate-intensity exercise per week.!",
+            "Adequate Sleep:\nEnsure you get 7-9 hours of quality sleep each night. Sleep is crucial for physical and mental recovery, immune function, and overall well-being.!",
+            "Mind-Body Connection:\n Practice stress-reducing activities such as meditation, deep breathing, or yoga. Chronic stress can negatively impact both physical and mental health.",
+            "Limit Sugar and Processed Foods:\nHigh sugar intake and processed foods can contribute to various health issues, including obesity, diabetes, and heart disease. Choose whole, unprocessed foods whenever possible."
     ]
 
   func fetchTip() {
