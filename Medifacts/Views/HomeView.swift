@@ -15,6 +15,7 @@ struct HomeView: View {
   var body: some View {
       NavigationView{
               VStack {
+                  
                   Text("Discover Something New!")
                       .navigationBarBackButtonHidden(true)
     
@@ -42,9 +43,6 @@ struct HomeView: View {
                       .padding()
                   
                                 Text(healthFetcher.joke)
-                    
-                      
-
                       
                 .padding()
               Button("Fetch Health Tip") {
@@ -52,7 +50,28 @@ struct HomeView: View {
                       
                       
               }
-              .padding(90)
+                  
+              .padding()
+                  TabView {
+                              Text("")
+                                  .tabItem {
+                                      Image(systemName: "house.fill")
+                                          .background(Color.black)
+                                      Text("Home")
+                                  }
+                              
+                              Text("")
+                                  .tabItem {
+                                      Image(systemName: "person.fill")
+                                      Text("Second")
+                                  }
+                              
+                              Text("")
+                                  .tabItem {
+                                      Image(systemName: "")
+                                      Text("Third")
+                                  }
+                          }
             }
             .onAppear {
                 healthFetcher.fetchTip()
